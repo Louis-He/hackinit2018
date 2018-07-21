@@ -9,10 +9,12 @@ Page({
     question: 'Initializing...',
     captureStatus: true,
   },
-
-  onShow() {
-    this.getQuestion();
-    var that = this;
+  onLoad(){
+    var that = this
+    wx.setStorage({
+      key: 'isCorrect',
+      data: true,
+    })
     wx.login({
       success: function (res) {
         if (res.code) {
@@ -38,6 +40,22 @@ Page({
         }
       }
     });
+  },
+
+  onShow() {
+    var that = this
+    setTimeout: 5
+    wx.getStorage({
+      key: 'isCorrect',
+      success: function(res) {
+        if (res.data){
+          that.getQuestion();
+        }else{
+          console.log('不更换题目！')
+        }
+      },
+    })
+    var that = this;
     this.ctx = wx.createCameraContext()
   },
   onHide(){
