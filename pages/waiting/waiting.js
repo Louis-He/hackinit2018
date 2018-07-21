@@ -13,6 +13,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this
     wx.getStorage({
       key: 'tempImagePath',
@@ -49,6 +52,7 @@ Page({
                     'user': 'test'
                   },
                   success: function (res) {
+                    wx.hideLoading()
                     that.setData({
                       isReturnResult: true
                     })
