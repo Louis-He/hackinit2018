@@ -1,2 +1,19 @@
 <!--pages/history/history.wxml-->
-<text>pages/history/history.wxml</text>
+<view class='title'> Learning From History </view>
+<view>
+
+</view>
+
+<view class="hot-box-more">
+
+      <view wx:if="{{!loadmorehidden}}">
+         <view class="weui-loadmore">
+            <view class="weui-loadmore__tips">Give me more history...</view>
+         </view>
+      </view>
+
+      <view wx:else>
+         <text> No more history </text>
+      </view>
+
+   </view>

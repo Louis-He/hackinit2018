@@ -1,1 +1,9 @@
 /* pages/history/history.wxss */
+@import '../../weui.wxss';
+.title{
+  align-content: center;
+  text-align: center;
+  font-weight: 300;
+  font-size: 60rpx;
+  margin-top: 20px;
+}

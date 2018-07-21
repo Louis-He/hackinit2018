@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    bottomCount: 1,
+    loadmorehidden: false,
   },
 
   /**
@@ -13,6 +14,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    that.setData({
+      loadmorehidden: false,
+    })
+
     wx.getStorage({
       key: 'openID',
       success: function(res) {
@@ -63,7 +68,14 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    var that = this;
+    var tmpBottomCount = that.data.bottomCount + 1
+
+    that.getHistory(0, that.data.bottomCount * 10)
+
+    that.setData({
+      bottomCount: tmpBottomCount
+    })
   },
 
   /**
@@ -88,13 +100,21 @@ Page({
       success: function (res) {
         console.log(res.data)
         that.setData({
-          list: res.data
+          list: res.data.data
         })
+
+        if (res.data.is_end){
+          that.setData({
+            loadmorehidden: true
+          })
+        }
+
       },
     })
     
   },
-
+  
+  /*
   getPicture: function(URL){
     var that = this
     wx.request({
@@ -102,10 +122,11 @@ Page({
       data: {
         'picture_id': URL,
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         console.log(res.data)
       },
     })
   }
+  */
 })
