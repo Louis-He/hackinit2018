@@ -44,7 +44,6 @@ Page({
 
   onShow() {
     var that = this
-    setTimeout: 5
     wx.getStorage({
       key: 'isCorrect',
       success: function(res) {
@@ -60,7 +59,6 @@ Page({
   },
   onHide(){
     this.setData({
-      question: 'Initializing...',
       captureStatus: true
     })
   },

@@ -52,24 +52,25 @@ Page({
                     that.setData({
                       isReturnResult: true
                     })
-                    
+
                     res.data = JSON.parse(res.data)
-                    console.log(res.data)
+                    console.log('DEBUG:', res.data.data.correct)
+                    console.log('DEBUG:', res.data.data)
                     if(res.data.data.correct){
                       that.setData({
                         correctResult: true
                       })
                       wx.setStorage({
                         key: 'isCorrect',
-                        data: false,
+                        data: true,
                       })
                     }else{
                       that.setData({
-                        correctResult: true
+                        correctResult: false
                       })
                       wx.setStorage({
                         key: 'isCorrect',
-                        data: true,
+                        data: false,
                       })
                     }
                   },
