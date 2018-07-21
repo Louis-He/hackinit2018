@@ -8,13 +8,21 @@
       <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;" hidden="{{!captureStatus}}"></camera>
       <image wx:if="{{src}}" style="width: 100%; height: 300px;" src="{{src}}" hidden="{{captureStatus}}"></image>
       <button open-type="getUserInfo"></button>
-      <view class="btn-area">
-        <button type='primary' bindtap="takePhoto">{{captureStatus?"Capture":"Retake"}}</button>
-      </view>
-      <view class="skip" bindtap="skip" hidden="{{!captureStatus}}">Skip</view>
-
-      <view class="btn-area">
-        <button type="primary" bindtap="uploadPhoto" hidden="{{captureStatus}}">Submit</button>
+      <block wx:if="{{captureStatus}}">
+        <view class="btn-area">
+          <button class="weui-btn" bindtap="takePhoto">Capture</button>
+        </view>
+      </block>
+      <block wx:if="{{!captureStatus}}">
+        <view class="btn-area">
+          <button class="secondary weui-btn" bindtap="takePhoto">Retake</button>
+        </view>
+      </block>
+      <block wx:if="{{captureStatus}}">
+        <view class="skip" bindtap="skip">Skip</view>
+      </block>
+      <view class="btn-area hsw">
+        <button class="weui-btn" bindtap="uploadPhoto" hidden="{{captureStatus}}">Submit</button>
       </view>
             
     </view>

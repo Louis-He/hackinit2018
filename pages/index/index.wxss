@@ -28,3 +28,20 @@ camera, image {
   color: grey;
   margin-top: 0.8em;
 }
+
+.weui-btn{
+  background-color: #359ACA;
+  color: white;
+  border-radius: 100rpx;
+  font-size: 32rpx;
+}
+
+.secondary{
+  background-color: gray;
+  color: white;
+}
+
+.hsw{
+  padding-top: 0;
+  margin-top: 10px;
+}
