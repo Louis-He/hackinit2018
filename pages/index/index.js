@@ -96,6 +96,9 @@ Page({
   uploadPhoto() {
     var that = this;
     console.log('UPLOADING!')
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.navigateTo({
       url: '../waiting/waiting',
     })

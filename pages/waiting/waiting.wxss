@@ -8,14 +8,28 @@
   margin-top: 20px;
   align-content: center;
   text-align: center;
-  font-size: 30px;
+  font-size: 64rpx;
 }
 .correct_title{
   color: #09BB07;
 }
 .description{
-  font-size: 22px;
+  font-size: 36rpx;
+  font-weight: 200;
+  align-content: center;
+  text-align: center;
+
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+image {
+  margin-top: 2em;
+  height: 300px;
 }
