@@ -106,6 +106,9 @@ Page({
   },
   getQuestion: function(){
     var that = this
+    that.setData({
+      question: "Loading..."
+    })
     wx.request({
       url: 'https://hackinit.choosebridge.com/api/question/new',
       header:{
