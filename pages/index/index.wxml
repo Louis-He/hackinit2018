@@ -6,14 +6,14 @@
       <view class='question'>{{question}}</view>
 
       <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;" hidden="{{!captureStatus}}"></camera>
-      <image wx:if="{{src}}" mode="widthFix" src="{{src}}" hidden="{{captureStatus}}"></image>
+      <image wx:if="{{src}}" style="width: 100%; height: 300px;" src="{{src}}" hidden="{{captureStatus}}"></image>
       <button open-type="getUserInfo"></button>
       <view class="btn-area">
         <button type="primary" bindtap="takePhoto">{{captureStatus?"拍照":"重拍"}}</button>
       </view>
 
       <view class="btn-area">
-        <button type="primary" bindtap="uploadPhoto">提交</button>
+        <button type="primary" bindtap="uploadPhoto" hidden="{{captureStatus}}">提交</button>
       </view>
             
     </view>
