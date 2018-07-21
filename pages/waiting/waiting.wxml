@@ -22,7 +22,7 @@
         </view>
     </view>
   </block>
-  <block wx:if="{{isReturnResult}}">
+  <block wx:else>
     <block wx:if="{{correctResult}}">
       <view class='title correct_title'>
         Congratulation!
@@ -34,6 +34,14 @@
         <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
       </view>
       <view>
+      </view>
+    </block>
+    <block wx : else>
+      <view class="weui-msg__text-area">
+        <view class="weui-msg__title">错了 智商呢</view>
+      </view>
+      <view class="btn-area">
+        <button type="primary" bindtap="takePhoto">重来</button>
       </view>
     </block>
   </block>
