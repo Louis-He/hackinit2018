@@ -9,6 +9,11 @@ Page({
     question: 'Initializing...',
     captureStatus: true,
   },
+
+  skip: function () {
+    this.getQuestion();
+  },
+
   onLoad(){
     var that = this
     wx.setStorage({
