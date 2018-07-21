@@ -49,8 +49,21 @@ Page({
                     'user': 'test'
                   },
                   success: function (res) {
+                    that.setData({
+                      isReturnResult: true
+                    })
+
                     res.data = JSON.parse(res.data)
                     console.log(res.data)
+                    if(res.data.data.coorect){
+                      that.setData({
+                        correctResult: true
+                      })
+                    }else{
+                      that.setData({
+                        correctResult: false
+                      })
+                    }
                   },
                   fail: function (res) {
                     console.log('fail')
