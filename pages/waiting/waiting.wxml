@@ -2,13 +2,14 @@
 <view class="page">
   <block wx:if="{{!isReturnResult}}">
     <view class="weui-msg">
-        <view class="weui-msg__extra-area">
-            <view class="weui-footer">
-                <view class="weui-footer__text">Copyright © 2018 hackinit</view>
-            </view>
-        </view>
+      <view class="weui-msg__extra-area">
+          <view class="weui-footer">
+              <view class="weui-footer__text">Copyright © 2018 hackinit</view>
+          </view>
+      </view>
     </view>
   </block>
+  
   <block wx:else>
     <block wx:if="{{correctResult}}">
       <view class='title correct_title'>
@@ -24,12 +25,13 @@
         <button type="primary" bindtap="retakePhoto">下一个</button>
       </view>
     </block>
+
     <block wx:else>
       <view class="weui-msg__text-area">
         <view class="weui-msg__title">错了 智商呢</view>
       </view>
       <view class="btn-area">
-        <button type="primary" bindtap="retakePhoto">重来</button>
+        <button class="weui-btn" bindtap="retakePhoto">重来</button>
       </view>
     </block>
   </block>

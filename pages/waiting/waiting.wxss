@@ -33,3 +33,10 @@ image {
   margin-top: 2em;
   height: 300px;
 }
+
+.weui-btn{
+  background-color: #359ACA;
+  color: white;
+  border-radius: 100rpx;
+  font-size: 32rpx;
+}

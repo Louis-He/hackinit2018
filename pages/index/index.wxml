@@ -6,7 +6,7 @@
       <view class='question'>{{question}}</view>
 
       <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;" hidden="{{!captureStatus}}"></camera>
-      <image wx:if="{{src}}" style="width: 100%; height: 300px;" src="{{src}}" hidden="{{captureStatus}}"></image>
+      <image wx:if="{{src}}" style="width: 100%; height: 300px;" src="{{src}}" hidden="{{captureStatus}}" mode="aspectFit"></image>
       <button open-type="getUserInfo"></button>
       <block wx:if="{{captureStatus}}">
         <view class="btn-area">
