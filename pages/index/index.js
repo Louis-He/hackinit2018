@@ -15,6 +15,7 @@ Page({
   },
 
   onLoad(){
+    this.ctx = wx.createCameraContext()
     var that = this
     wx.setStorage({
       key: 'isCorrect',
@@ -45,10 +46,11 @@ Page({
         }
       }
     });
-    that.ctx = wx.createCameraContext()
+    
   },
 
   onShow() {
+    this.onLoad();
     var that = this
     this.setData({
       captureStatus: true
@@ -72,7 +74,6 @@ Page({
   },
 
   takePhoto: function(){
-    
     if (this.data.captureStatus) {
       console.log('WTF')
       this.ctx.takePhoto({
@@ -89,7 +90,11 @@ Page({
             data: res.tempImagePath,
           })
         },
+        fail: (res) => {
+          console.log('???')
+        },
         error(e) {
+          console.log('ERROR???')
           console.log(e.detail)
         }
       })
