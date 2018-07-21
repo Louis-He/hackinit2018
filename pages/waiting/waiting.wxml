@@ -36,12 +36,12 @@
       <view>
       </view>
     </block>
-    <block wx : else>
+    <block wx:else>
       <view class="weui-msg__text-area">
         <view class="weui-msg__title">错了 智商呢</view>
       </view>
       <view class="btn-area">
-        <button type="primary" bindtap="takePhoto">重来</button>
+        <button type="primary" bindtap="retakePhoto">重来</button>
       </view>
     </block>
   </block>

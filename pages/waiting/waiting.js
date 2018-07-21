@@ -132,5 +132,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  retakePhoto: function () {
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })
