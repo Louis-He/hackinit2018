@@ -1,5 +1,9 @@
 /* pages/waiting/waiting.wxss */
 @import '../../weui.wxss';
+.photo{
+  margin-left: 55rpx;
+  margin-right: 55rpx;
+}
 .title{
   margin-top: 20px;
   align-content: center;

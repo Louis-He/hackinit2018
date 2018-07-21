@@ -1,8 +1,12 @@
 <!--index.wxml-->
 <view class="page">
   <view class="page-body">
+    <view class='pre-question'>Please Find...</view>
     <view class="page-body-wrapper">
+      <view class='question'>{{question}}</view>
+
       <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+      <button open-type="getUserInfo"></button>
       <view class="btn-area">
         <button type="primary" bindtap="takePhoto">拍照</button>
       </view>

@@ -24,8 +24,16 @@
   </block>
   <block wx:if="{{isReturnResult}}">
     <block wx:if="{{correctResult}}">
-      <view class='correct_title'>
-        TITLE
+      <view class='title correct_title'>
+        Congratulation!
+      </view>
+      <view class='title correct_title'>
+        {{}}
+      </view>
+      <view class='photo'>
+        <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
+      </view>
+      <view>
       </view>
     </block>
   </block>

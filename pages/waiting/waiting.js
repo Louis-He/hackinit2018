@@ -18,10 +18,58 @@ Page({
       key: 'tempImagePath',
       success: function (res) {
         that.setData({
-          tmpPath: res.data
+          "tmpPath": res.data
         })
+
+        wx.getStorage({
+          key: 'openID',
+          success: function (res) {
+            that.setData({
+              "openID": res.data
+            })
+
+            wx.getStorage({
+              key: 'word',
+              success: function (res) {
+                console.log(res.data)
+                that.setData({
+                  "word": res.data
+                })
+
+                wx.uploadFile({
+                  url: "https://hackinit.choosebridge.com/api/question/answer",
+                  filePath: that.data.tmpPath,
+                  name: 'picture',
+                  header: {
+                    'Content-Type': 'application/json',
+                    "openID": that.data.openID,
+                    "word": that.data.word
+                  },
+                  formData: {
+                    'user': 'test'
+                  },
+                  success: function (res) {
+                    console.log(res)
+                    
+                  },
+                  fail: function (res) {
+                    console.log('fail')
+                    //do something
+                    wx.navigateTo({
+                      url: '../fail/fail',
+                    })
+                  },
+                })
+
+              },
+
+            })
+          },
+        })
+
       },
     })
+
   },
 
   /**

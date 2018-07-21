@@ -13,3 +13,12 @@
   margin-left: 40rpx;
   margin-right: 40rpx;
 }
+
+.pre-question{
+  align-items: left;
+  font-size: 45rpx;
+}
+
+.question{
+  font-size: 60rpx;
+}
