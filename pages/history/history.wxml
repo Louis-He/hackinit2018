@@ -1,19 +1,25 @@
 <!--pages/history/history.wxml-->
 <view class='title'> Learning From History </view>
-<view>
-
+<view class='main' wx:for="{{list}}">
+  <view class='card'>
+    <view>{{index + 1}}: <text class='subText'>{{item.word}}</text></view>
+    <image></image>
+  </view>
 </view>
 
 <view class="hot-box-more">
 
       <view wx:if="{{!loadmorehidden}}">
          <view class="weui-loadmore">
+            <view class="weui-loading"></view>
             <view class="weui-loadmore__tips">Give me more history...</view>
          </view>
       </view>
 
       <view wx:else>
-         <text> No more history </text>
+         <view class="weui-loadmore">
+            <view class="weui-loadmore__tips">No more history</view>
+         </view>
       </view>
 
    </view>

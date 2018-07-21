@@ -45,10 +45,14 @@ Page({
         }
       }
     });
+    that.ctx = wx.createCameraContext()
   },
 
   onShow() {
     var that = this
+    this.setData({
+      captureStatus: true
+    })
     wx.getStorage({
       key: 'isCorrect',
       success: function(res) {
@@ -59,8 +63,6 @@ Page({
         }
       },
     })
-    var that = this;
-    this.ctx = wx.createCameraContext()
   },
   onHide(){
     console.log('老子走了')
@@ -68,11 +70,15 @@ Page({
       captureStatus: true
     })
   },
-  takePhoto() {
+
+  takePhoto: function(){
+    
     if (this.data.captureStatus) {
+      console.log('WTF')
       this.ctx.takePhoto({
         quality: 'high',
         success: (res) => {
+          console.log('YES!')
           this.setData({
             src: res.tempImagePath,
             captureStatus: false
@@ -82,6 +88,9 @@ Page({
             key: 'tempImagePath',
             data: res.tempImagePath,
           })
+        },
+        error(e) {
+          console.log(e.detail)
         }
       })
     } else {

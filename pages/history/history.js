@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bottomCount: 1,
+    bottomCount: 2,
     loadmorehidden: false,
   },
 
@@ -106,6 +106,10 @@ Page({
         if (res.data.is_end){
           that.setData({
             loadmorehidden: true
+          })
+        }else{
+          that.setData({
+            loadmorehidden: false
           })
         }
 
