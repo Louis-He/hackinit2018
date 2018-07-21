@@ -152,5 +152,11 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+  },
+
+  nextPhoto: function (){
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

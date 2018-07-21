@@ -18,6 +18,10 @@
         {{description}}
       </view>
       <image style="width: 100%; height: 300px;" src="{{tmpPath}}" mode="aspectFit"></image>
+
+      <view class="btn-area">
+        <button class="weui-btn" bindtap="nextPhoto">One more!</button>
+      </view>
       
     </block>
     <block wx:else>
