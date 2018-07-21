@@ -10,7 +10,7 @@ Page({
     captureStatus: true,
   },
 
-  onLoad() {
+  onShow() {
     this.getQuestion();
     var that = this;
     wx.login({
@@ -39,6 +39,12 @@ Page({
       }
     });
     this.ctx = wx.createCameraContext()
+  },
+  onHide(){
+    this.setData({
+      question: 'Initializing...',
+      captureStatus: true
+    })
   },
   takePhoto() {
     if (this.data.captureStatus) {
