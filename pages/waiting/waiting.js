@@ -55,7 +55,7 @@ Page({
 
                     res.data = JSON.parse(res.data)
                     console.log(res.data)
-                    if(res.data.data.coorect){
+                    if(res.data.data.correct){
                       that.setData({
                         correctResult: true
                       })
