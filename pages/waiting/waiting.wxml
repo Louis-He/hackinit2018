@@ -15,11 +15,14 @@
       <view class='title correct_title'>
         Congratulation!
       </view>
+      <view class='word'>
+        {{word}}
+      </view>
       <view class='description'>
         {{description}}
       </view>
       <view class='center'>
-        <image wx:if="{{tmpPath}}" src="{{tmpPath}}"></image>
+        <image wx:if="{{tmpPath}}" src="{{tmpPath}}" mode="aspectFit"></image>
       </view>
 
       <view class="btn-area">

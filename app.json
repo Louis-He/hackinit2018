@@ -3,12 +3,33 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/waiting/waiting",
-    "pages/fail/fail"
+    "pages/fail/fail",
+    "pages/history/history"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "#333333",
+    "backgroundColor": "#FFFFFF",
+    "color": "#AAAAAA",
+    "selectedColor": "#3F53AF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Learn",
+        "iconPath": "pages/img/learn.png",
+        "selectedIconPath": "pages/img/learn.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "Review",
+        "iconPath": "pages/img/review.png",
+        "selectedIconPath": "pages/img/review.png"
+      }
+    ]
   }
 }
