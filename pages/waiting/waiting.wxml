@@ -1,5 +1,6 @@
 <!--pages/waiting/waiting.wxml-->
 <view class="page">
+  <block wx:if="{{isReturnResult}}">
     <view class="weui-msg">
         <view class="weui-msg__icon-area">
             <icon type="success" size="93"></icon>
@@ -20,4 +21,5 @@
             </view>
         </view>
     </view>
+  </block>
 </view>

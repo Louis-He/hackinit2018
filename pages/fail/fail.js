@@ -81,7 +81,7 @@ Page({
       },
     })
     wx.uploadFile({
-      url: "https://hackinit.choosebridge.com/", //仅为示例，非真实的接口地址
+      url: "https://hackinit.choosebridge.com/api/photo/upload", //仅为示例，非真实的接口地址
       filePath: that.tmpPath,
       name: 'testPhoto',
       formData: {
