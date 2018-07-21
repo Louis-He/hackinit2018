@@ -28,11 +28,20 @@
     </block>
 
     <block wx:else>
-      <view class="weui-msg__text-area">
-        <view class="weui-msg__title">错了 智商呢</view>
+      <view class='title wrong_title'>
+        Maybe Try again?
       </view>
+
+      <view class='word'>
+        {{word}}
+      </view>
+
+      <view class='center'>
+        <image wx:if="{{tmpPath}}" src="{{tmpPath}}"></image>
+      </view>
+
       <view class="btn-area">
-        <button class="weui-btn" bindtap="retakePhoto">重来</button>
+        <button class="weui-btn" bindtap="retakePhoto">Try again</button>
       </view>
     </block>
   </block>
