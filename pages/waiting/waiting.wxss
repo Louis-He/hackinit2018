@@ -1,2 +1,11 @@
 /* pages/waiting/waiting.wxss */
 @import '../../weui.wxss';
+.title{
+  margin-top: 20px;
+  align-content: center;
+  text-align: center;
+  font-size: 30px;
+}
+.correct_title{
+  color: #09BB07;
+}
