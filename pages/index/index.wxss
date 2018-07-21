@@ -3,7 +3,7 @@
   margin: 20rpx 0;  
 }
 
-camera {
+camera, image {
   margin-top: 2em
 }
 

@@ -9,12 +9,12 @@
       <image wx:if="{{src}}" style="width: 100%; height: 300px;" src="{{src}}" hidden="{{captureStatus}}"></image>
       <button open-type="getUserInfo"></button>
       <view class="btn-area">
-        <button type="primary" bindtap="takePhoto">{{captureStatus?"拍照":"重拍"}}</button>
+        <button type='primary' bindtap="takePhoto">{{captureStatus?"Capture":"Retake"}}</button>
       </view>
-      <view class="skip" bindtap="skip">跳过该题</view>
+      <view class="skip" bindtap="skip" hidden="{{!captureStatus}}">Skip</view>
 
       <view class="btn-area">
-        <button type="primary" bindtap="uploadPhoto" hidden="{{captureStatus}}">提交</button>
+        <button type="primary" bindtap="uploadPhoto" hidden="{{captureStatus}}">Submit</button>
       </view>
             
     </view>
