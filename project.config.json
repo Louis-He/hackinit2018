@@ -40,6 +40,12 @@
 					"name": "成功界面",
 					"pathName": "pages/waiting/waiting",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "错误界面",
+					"pathName": "pages/fail/fail",
+					"query": ""
 				}
 			]
 		}
