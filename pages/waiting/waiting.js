@@ -49,8 +49,8 @@ Page({
                     'user': 'test'
                   },
                   success: function (res) {
-                    console.log(res)
-                    
+                    res.data = JSON.parse(res.data)
+                    console.log(res.data)
                   },
                   fail: function (res) {
                     console.log('fail')
