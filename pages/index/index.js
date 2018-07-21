@@ -70,14 +70,12 @@ Page({
   },
   takePhoto() {
     if (this.data.captureStatus) {
-      this.setData({
-        captureStatus: false
-      })
       this.ctx.takePhoto({
         quality: 'high',
         success: (res) => {
           this.setData({
-            src: res.tempImagePath
+            src: res.tempImagePath,
+            captureStatus: false
           })
 
           wx.setStorage({
