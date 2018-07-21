@@ -22,4 +22,9 @@
         </view>
     </view>
   </block>
+  <block wx:if="{{isReturnResult}}">
+    <block wx:if="{{correctResult}}">
+      
+    </block>
+  </block>
 </view>
