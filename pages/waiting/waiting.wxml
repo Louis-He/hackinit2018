@@ -14,6 +14,9 @@
       <view class='title correct_title'>
         Congratulation!
       </view>
+      <view class='description'>
+        {{description}}
+      </view>
       <view class='title correct_title'>
         {{}}
       </view>
