@@ -9,6 +9,7 @@
       </view>
     </view>
   </block>
+  
   <block wx:else>
     <block wx:if="{{correctResult}}">
       <view class='title correct_title'>
@@ -17,13 +18,15 @@
       <view class='description'>
         {{description}}
       </view>
-      <image style="width: 100%; height: 300px;" src="{{tmpPath}}" mode="aspectFit"></image>
+      <view class='center'>
+        <image wx:if="{{tmpPath}}" src="{{tmpPath}}"></image>
+      </view>
 
       <view class="btn-area">
         <button class="weui-btn" bindtap="nextPhoto">One more!</button>
       </view>
-      
     </block>
+
     <block wx:else>
       <view class="weui-msg__text-area">
         <view class="weui-msg__title">错了 智商呢</view>
