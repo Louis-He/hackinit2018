@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    question: 'Initializing...'
+    question: 'Initializing...',
+    captureStatus: true,
   },
 
   onLoad() {
@@ -40,19 +41,29 @@ Page({
     this.ctx = wx.createCameraContext()
   },
   takePhoto() {
-    this.ctx.takePhoto({
-      quality: 'high',
-      success: (res) => {
-        this.setData({
-          src: res.tempImagePath
-        })
+    if (this.data.captureStatus) {
+      this.setData({
+        captureStatus: false
+      })
+      this.ctx.takePhoto({
+        quality: 'high',
+        success: (res) => {
+          this.setData({
+            src: res.tempImagePath
+          })
 
-        wx.setStorage({
-          key: 'tempImagePath',
-          data: res.tempImagePath,
-        })
-      }
-    })
+          wx.setStorage({
+            key: 'tempImagePath',
+            data: res.tempImagePath,
+          })
+        }
+      })
+    } else {
+      this.setData({
+        captureStatus: true
+      })
+    }
+    
   },
   uploadPhoto() {
     var that = this;
