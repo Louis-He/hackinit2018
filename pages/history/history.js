@@ -12,7 +12,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    wx.getStorage({
+      key: 'openID',
+      success: function(res) {
+        that.setData({
+          openID: res.data
+        })
+        that.getHistory(0,10)
+      },
+    })
   },
 
   /**
@@ -26,7 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+   this.getHistory(0, 10)
   },
 
   /**
@@ -62,5 +71,41 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  getHistory: function(offset, limit) {
+    var that = this
+    wx.request({
+      url: 'https://hackinit.choosebridge.com/api/question/history',
+      header: {
+        'openid': that.data.openID
+      },
+      data: {
+        'offset': offset,
+        'limit': limit
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          list: res.data
+        })
+      },
+    })
+    
+  },
+
+  getPicture: function(URL){
+    var that = this
+    wx.request({
+      url: 'https://hackinit.choosebridge.com/api/picture/get',
+      data: {
+        'picture_id': URL,
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data)
+      },
+    })
   }
 })
