@@ -6,6 +6,10 @@
       <view class="btn-area">
         <button type="primary" bindtap="takePhoto">拍照</button>
       </view>
+
+      <view class="btn-area">
+        <button type="primary" bindtap="uploadPhoto">上传</button>
+      </view>
       
       <view class="preview-tips">预览</view>
       <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
