@@ -49,7 +49,7 @@ Page({
                     'user': 'test'
                   },
                   success: function (res) {
-                    console.log(res)
+                    console.log(res.data)
                     
                   },
                   fail: function (res) {
