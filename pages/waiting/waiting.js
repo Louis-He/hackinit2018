@@ -58,7 +58,8 @@ Page({
                     console.log('DEBUG:', res.data.data)
                     if(res.data.data.correct){
                       that.setData({
-                        correctResult: true
+                        correctResult: true,
+                        description: res.data.data.description.text
                       })
                       wx.setStorage({
                         key: 'isCorrect',

@@ -13,3 +13,9 @@
 .correct_title{
   color: #09BB07;
 }
+.description{
+  font-size: 22px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}

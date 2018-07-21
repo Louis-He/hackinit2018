@@ -58,6 +58,7 @@ Page({
     this.ctx = wx.createCameraContext()
   },
   onHide(){
+    console.log('老子走了')
     this.setData({
       captureStatus: true
     })
