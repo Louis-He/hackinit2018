@@ -26,7 +26,7 @@ Page({
         that.setData({
           openID: res.data
         })
-        that.getHistory(0, 10)
+        that.getHistory(0, 10, true)
       },
     })
   },
@@ -73,7 +73,7 @@ Page({
     var that = this;
     var tmpBottomCount = that.data.bottomCount + 1
 
-    that.getHistory(0, that.data.bottomCount * 10)
+    that.getHistory(0, that.data.bottomCount * 10, true)
 
     that.setData({
       bottomCount: tmpBottomCount
@@ -87,7 +87,7 @@ Page({
   
   },
 
-  getHistory: function(offset, limit) {
+  getHistory: function (offset, limit, is_correct) {
     var that = this
     wx.request({
       url: 'https://hackinit.choosebridge.com/api/question/history',
@@ -96,7 +96,8 @@ Page({
       },
       data: {
         'offset': offset,
-        'limit': limit
+        'limit': limit,
+        'is_correct': is_correct
       },
       method: 'POST',
       success: function (res) {
