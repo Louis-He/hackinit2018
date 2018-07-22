@@ -11,7 +11,7 @@
   font-size: 64rpx;
 }
 .correct_title{
-  color: #09BB07;
+  color: #359ACA;
 }
 .wrong_title{
   font-size: 42rpx;
@@ -25,7 +25,7 @@
 
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .word{
@@ -36,7 +36,7 @@
 
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .center {
@@ -45,7 +45,7 @@
 }
 
 image {
-  margin-top: 2em;
+  margin-top: 0.7em;
   height: 300px;
 }
 
