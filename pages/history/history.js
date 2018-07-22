@@ -13,6 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    getApp().globalData.isReload = true;
+
     var that = this
     that.setData({
       loadmorehidden: false,

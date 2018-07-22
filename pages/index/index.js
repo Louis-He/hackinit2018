@@ -8,7 +8,6 @@ Page({
   data: {
     question: 'Initializing...',
     captureStatus: true,
-    isReload: false,
   },
 
   skip: function () {
@@ -17,9 +16,7 @@ Page({
 
   onLoad(){
     this.ctx = wx.createCameraContext()
-    this.setData({
-      isReload: false
-    })
+    app.globalData.isReload = false
     var that = this
     wx.setStorage({
       key: 'isCorrect',
@@ -54,7 +51,7 @@ Page({
   },
 
   onShow() {
-    if (this.data.isReload) {
+    if (app.globalData.isReload) {
       wx.reLaunch({
         url: '/pages/index/index',
       })
@@ -78,7 +75,6 @@ Page({
     console.log('老子走了')
     this.setData({
       captureStatus: true,
-      isReload: true
     })
   },
 
