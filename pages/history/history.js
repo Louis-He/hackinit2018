@@ -24,7 +24,6 @@ Page({
         that.setData({
           openID: res.data
         })
-        that.getHistory(0,10)
       },
     })
   },
@@ -101,6 +100,7 @@ Page({
         console.log(res.data)
         that.setData({
           list: res.data.data
+          
         })
 
         if (res.data.is_end){

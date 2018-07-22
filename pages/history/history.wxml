@@ -4,7 +4,7 @@
 <view class='main' wx:for="{{list}}">
   <view class='card'>
     <view>{{index + 1}}: <text class='subText'>{{item.word}}</text></view>
-    <image></image>
+     <image src="https://hackinit.choosebridge.com/api/picture/get/{{item.picture}}" mode="aspectFit"></image>
   </view>
 </view>
 
