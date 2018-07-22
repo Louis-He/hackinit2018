@@ -167,8 +167,9 @@ Page({
     backgroundAudioManager.title = '-'
     backgroundAudioManager.epname = '-'
     backgroundAudioManager.singer = '有道词典'
-    var tmpURL = input.replace(' ', '%20');
-  
+    var reg = new RegExp(' ', "g")
+    var tmpURL = input.replace(reg, '%20');
+
     tmpURL = 'http://dict.youdao.com/dictvoice?audio=' + tmpURL
 
     backgroundAudioManager.src = tmpURL
