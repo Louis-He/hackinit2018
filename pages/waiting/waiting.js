@@ -69,6 +69,7 @@ Page({
                         key: 'isCorrect',
                         data: true,
                       })
+                      that.readEnglish(res.data.data.description.text);
                     }else{
                       that.setData({
                         correctResult: false
@@ -77,6 +78,7 @@ Page({
                         key: 'isCorrect',
                         data: false,
                       })
+                      that.readEnglish(res.data.data.answer);
                     }
                   },
                   fail: function (res) {
@@ -158,5 +160,19 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+  },
+
+  readEnglish: function (input) {
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.title = '-'
+    backgroundAudioManager.epname = '-'
+    backgroundAudioManager.singer = '有道词典'
+    var tmpURL = input.replace(' ', '%20');
+  
+    tmpURL = 'http://dict.youdao.com/dictvoice?audio=' + tmpURL
+
+    backgroundAudioManager.src = tmpURL
+
+    console.log('back:', tmpURL)
   }
 })

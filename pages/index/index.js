@@ -50,7 +50,6 @@ Page({
   },
 
   onShow() {
-    this.onLoad();
     var that = this
     this.setData({
       captureStatus: true
@@ -138,7 +137,15 @@ Page({
           key: 'word',
           data: res.data.word,
         })
+        that.readEnglish(res.data.word);
       }
     })
+  },
+  readEnglish: function (input){
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    backgroundAudioManager.title = '-'
+    backgroundAudioManager.epname = '-'
+    backgroundAudioManager.singer = '有道词典'
+    backgroundAudioManager.src = 'http://dict.youdao.com/dictvoice?audio=' + input
   }
 })
