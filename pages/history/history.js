@@ -26,6 +26,7 @@ Page({
         that.setData({
           openID: res.data
         })
+        that.getHistory(0, 10)
       },
     })
   },
@@ -41,7 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   this.getHistory(0, 10)
+
   },
 
   /**
