@@ -13,6 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    getApp().globalData.isReload = true;
+
     var that = this
     that.setData({
       loadmorehidden: false,
@@ -24,7 +26,7 @@ Page({
         that.setData({
           openID: res.data
         })
-        that.getHistory(0,10)
+        that.getHistory(0, 10, true)
       },
     })
   },
@@ -40,7 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   this.getHistory(0, 10)
+
   },
 
   /**
@@ -71,7 +73,7 @@ Page({
     var that = this;
     var tmpBottomCount = that.data.bottomCount + 1
 
-    that.getHistory(0, that.data.bottomCount * 10)
+    that.getHistory(0, that.data.bottomCount * 10, true)
 
     that.setData({
       bottomCount: tmpBottomCount
@@ -85,7 +87,7 @@ Page({
   
   },
 
-  getHistory: function(offset, limit) {
+  getHistory: function (offset, limit, is_correct) {
     var that = this
     wx.request({
       url: 'https://hackinit.choosebridge.com/api/question/history',
@@ -94,13 +96,15 @@ Page({
       },
       data: {
         'offset': offset,
-        'limit': limit
+        'limit': limit,
+        'is_correct': is_correct
       },
       method: 'POST',
       success: function (res) {
         console.log(res.data)
         that.setData({
           list: res.data.data
+          
         })
 
         if (res.data.is_end){

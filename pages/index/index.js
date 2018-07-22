@@ -16,6 +16,7 @@ Page({
 
   onLoad(){
     this.ctx = wx.createCameraContext()
+    app.globalData.isReload = false
     var that = this
     wx.setStorage({
       key: 'isCorrect',
@@ -50,6 +51,12 @@ Page({
   },
 
   onShow() {
+
+    if (app.globalData.isReload) {
+      wx.reLaunch({
+        url: '/pages/index/index',
+      })
+    }    
     var that = this
     this.setData({
       captureStatus: true
@@ -68,7 +75,7 @@ Page({
   onHide(){
     console.log('老子走了')
     this.setData({
-      captureStatus: true
+      captureStatus: true,
     })
   },
 
